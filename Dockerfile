@@ -19,6 +19,8 @@ RUN sudo yum install -y \
 	librsvg2 \
 	libtool-ltdl \
 	libwmf-lite \
+	freetype-devel \
+	libXt-devel \
 	fftw3 && \
 	sudo rpm -ivh https://github.com/leeonky/tools_dev/raw/master/ImageMagick-libs-6.9.6-5.x86_64.rpm && \
 	sudo rpm -ivh https://github.com/leeonky/tools_dev/raw/master/ImageMagick-6.9.6-5.x86_64.rpm && \
