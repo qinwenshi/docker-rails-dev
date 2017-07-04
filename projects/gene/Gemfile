@@ -1,0 +1,189 @@
+# source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
+#source 'http://gems.ruby-china.org'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 4.2.6'
+# active model
+gem 'activemodel'
+#decorator(view model)
+gem 'draper'
+#slim view engine
+gem 'slim-rails'
+
+# Use SCSS for stylesheets
+gem 'sass-rails'
+gem 'less-rails'
+gem 'sprockets'
+
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier'
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails'
+
+
+gem 'bootstrap-sass'
+gem 'bootstrap_form'
+
+# we can use bower's jquery directly, but rails need jquery_ujs to implement model delete for model index page.
+gem 'jquery-rails'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder'
+# Xml parser
+gem 'actionpack-xml_parser'
+gem 'xml-simple'
+
+#restful client
+gem 'rest-client'
+
+# See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
+
+# Default values for AR models
+gem "default_value_for"
+# Use ActiveModel has_secure_password
+gem 'bcrypt'
+# track model data changes
+gem 'paper_trail'
+# log action
+gem 'impressionist'
+
+gem 'wisper'
+gem 'wisper-activerecord'
+
+# rails step-by-step wizard controller
+gem 'wicked'
+# Organise ActiveRecord model into a tree structure
+gem 'ancestry'
+
+gem 'wechat'
+gem 'wx_pay'
+gem 'weui-rails'
+
+# Generic hooks with callbacks for Ruby.
+gem 'hooks'
+
+# search and filter active record data
+gem 'scoped_search'
+gem 'country_select'
+gem 'hashids' #hash ids
+
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
+gem 'devise'
+gem 'pundit'
+gem 'rolify'
+gem 'simple_captcha2', require: 'simple_captcha'
+
+gem 'mina'
+gem 'mina-sidekiq', require: false
+gem 'mina-unicorn', require: false
+gem 'mina-nginx', require: false
+gem 'mina-multistage', require: false
+
+gem 'factory_girl'
+# factory girl
+gem 'factory_girl_rails'
+
+gem 'surveyor', :git => 'https://github.com/tengzy/surveyor.git', :ref => '2f9f7a7603907392aa1fe9ef4c15b67d9e793dfd'
+gem 'GB2260'
+gem 'china_city', :git => 'https://github.com/jerecui/china_city.git'
+gem 'rubyXL'
+
+# money
+gem 'money'
+gem 'money-rails'
+gem 'currencies'
+
+# file upload
+gem 'carrierwave'
+gem 'qiniu'
+gem 'carrierwave-qiniu'
+gem 'file_validators'
+gem "rmagick"
+
+# generate the pdf via html
+gem 'wicked_pdf'
+
+gem 'sinatra'
+gem 'whenever'
+gem 'sidekiq'
+gem 'redis-namespace'
+gem 'redis'
+
+# ping plus plus 第三方支付
+gem 'pingpp'
+
+# Colored output to console
+gem "colorize"
+
+# api documentation
+gem 'apipie-rails'
+
+group :production do
+  # Use Unicorn as the app server
+  gem 'unicorn'
+
+  # Use postgresql as the database for Active Record
+  gem 'pg'
+end
+
+group :development do
+  gem "foreman"
+  gem 'brakeman', require: false
+  gem 'rerun'
+  gem 'bullet', require: false
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # Docs generator
+  gem "sdoc"
+  # thin instead webrick
+  gem 'thin'
+end
+
+
+group :development, :test do
+
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  gem 'awesome_print', '~> 1.2.0', require: false
+
+  gem 'rspec-expectations'
+  gem 'simplecov', :require => false
+  gem 'wisper-rspec', :require => false
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+
+  #sqlite
+  gem 'sqlite3'
+
+  #rspec
+  gem 'rspec-rails'
+
+  #cucumber
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
+  gem 'site_prism' #page model for cucumber page.
+  gem 'ule_page', :git => 'https://github.com/jerecui/ule_page'
+  # gem 'ule_page', :path => '/Users/tsuijy/Projects/Odde/ruby/ule_page'
+  gem 'poltergeist'
+
+  gem 'parallel_tests'
+
+end
+
+group :test do
+  gem 'webmock'
+  gem 'test_after_commit'
+end

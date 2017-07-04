@@ -1,0 +1,192 @@
+
+source 'https://rubygems.org'
+
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.0.0'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
+# Abort requests that take too long on a Puma server
+gem "rack-timeout"
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.2'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.6'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# slim view engine
+gem 'slim-rails'
+
+gem 'webhook', '~> 1.0.0'
+gem 'activejob-retry'
+# active model
+gem 'activemodel'
+#decorator(view model)
+# gem 'draper'
+gem 'mailgun-ruby', '~>1.1.4'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+gem 'bootstrap-sass', '~> 3.3.6' #bootstrap
+gem 'bootstrap_form'
+
+# queue
+gem 'sidekiq'
+gem 'redis-namespace'
+gem 'redis' # Use Redis adapter to run Action Cable in production
+# gem 'sinatra', '2.0.0.beta2'
+
+gem "redis-store"
+gem 'redis-rails'
+gem "redis-rack-cache"
+
+# user and permissions
+gem 'devise'
+gem 'pundit'
+gem 'rolify'
+
+# log action
+gem 'impressionist'
+gem 'paper_trail'
+# slack-nofication
+gem "slack-notifier"
+
+# money
+gem 'money'
+gem 'money-rails'
+gem 'currencies'
+
+#alipay
+gem 'alipay', '~> 0.14.0'
+
+# factory girl
+gem 'factory_girl_rails'
+gem "font-awesome-rails"
+
+#restful client
+gem 'rest-client'
+
+# grape (api framework)
+gem 'grape', '~>0.18'
+# Disables the security feature of strong_params at the model layer, allowing you the use of Grape's own params validation instead.
+gem 'hashie-forbidden_attributes'
+# grape api document
+gem 'grape-swagger-rails'
+# For Grape::Entity ( https://github.com/ruby-grape/grape-entity )
+gem 'grape-swagger-entity', :git => 'https://github.com/jerecui/grape-swagger-entity'
+# For representable ( https://github.com/apotonick/representable )
+gem 'grape-swagger-representable'
+# grape active model serializer
+gem 'grape-active_model_serializers'
+
+gem 'rack-cors', :require => 'rack/cors'
+
+# Default values for AR models
+gem "default_value_for", "~> 3.0.0"
+
+gem 'wisper'
+gem 'wisper-activerecord'
+
+gem 'hashids' #hash ids
+
+# Generic hooks with callbacks for Ruby.
+gem 'hooks'
+gem 'ransack'
+
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
+gem 'qiniu'
+gem 'carrierwave-qiniu'
+gem 'file_validators'
+
+gem 'rucaptcha'
+
+gem 'aws-sdk'
+
+gem 'rubyXL'
+
+gem 'nokogiri'
+
+gem "attr_encrypted", "~> 3.0.0"
+
+# deployment
+gem 'mina'
+gem 'mina-puma', require: false, :git => 'https://github.com/untitledkingdom/mina-puma'
+gem 'mina-sidekiq', require: false
+gem 'mina-nginx', require: false
+
+# Colored output to console
+gem "colorize"
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
+  gem 'awesome_print', '~> 1.2.0', require: false
+
+  gem 'wisper-rspec', require: false
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'rspec-rails'
+  gem 'rspec-expectations'
+
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
+  gem 'cucumber-rails', :require => false
+  gem 'site_prism', '~> 2.9' #page model for cucumber page.
+  gem 'ule_page', :git => 'https://github.com/jerecui/ule_page'
+end
+
+group :development do
+  gem "foreman"
+
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console'
+  gem 'listen', '~> 3.0.5'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # Docs generator
+  gem "sdoc", '~> 0.4.0'
+  # thin instead webrick
+  gem 'thin', '~> 1.6.1'
+
+  gem 'pry'
+  gem 'pry-nav'
+end
+
+group :test do
+  gem 'minitest'
+  gem 'rspec-its'
+  gem 'rspec-activemodel-mocks', '~>1.0.3'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem "rack-test", require: "rack/test"
+  gem 'rspec-sidekiq'
+  gem 'rails-controller-testing'
+end
+
+
+group :staging, :production do
+  gem 'pg'
+end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
