@@ -1,9 +1,7 @@
-# source 'https://rubygems.org'
-source 'https://ruby.taobao.org'
-#source 'http://gems.ruby-china.org'
+source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.6'
+gem 'rails', '~> 4.2.8'
 # active model
 gem 'activemodel'
 #decorator(view model)
@@ -82,7 +80,6 @@ gem 'mina'
 gem 'mina-sidekiq', require: false
 gem 'mina-unicorn', require: false
 gem 'mina-nginx', require: false
-gem 'mina-multistage', require: false
 
 gem 'factory_girl'
 # factory girl
@@ -108,9 +105,14 @@ gem "rmagick"
 # generate the pdf via html
 gem 'wicked_pdf'
 
+# calendar
+gem "simple_calendar", "~> 2.0"
+
 gem 'sinatra'
 gem 'whenever'
 gem 'sidekiq'
+gem 'activejob-retry'
+
 gem 'redis-namespace'
 gem 'redis'
 
