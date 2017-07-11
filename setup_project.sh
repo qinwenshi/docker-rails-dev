@@ -41,16 +41,17 @@ do
 		exec_cmd rvm install $(cat .ruby-version)
 	popd
 	pushd "$path"
-		if [ -f Gemfile.lock ]; then
-			ver=$(cat Gemfile.lock | awk '{ if(match($0, / rails \(([0-9]+\.[0-9]+\.[0-9]+)\)/, vers)) print vers[1]}')
-			if [ ! -z "$ver" ]; then
-				exec_cmd gem install rails -v $ver
-			else
-				install_rails_by_gemfile
-			fi
-		else
-			install_rails_by_gemfile
-		fi
+		#if [ -f Gemfile.lock ]; then
+			#ver=$(cat Gemfile.lock | awk '{ if(match($0, / rails \(([0-9]+\.[0-9]+\.[0-9]+)\)/, vers)) print vers[1]}')
+			#if [ ! -z "$ver" ]; then
+				#exec_cmd gem install rails -v $ver
+			#else
+				#install_rails_by_gemfile
+			#fi
+		#else
+			#install_rails_by_gemfile
+		#fi
+		exec_cmd bundle install
 		set_default_ruby_rails_ver
 	popd
 done
