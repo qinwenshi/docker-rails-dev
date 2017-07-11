@@ -1,4 +1,4 @@
-FROM daocloud.io/leeonky/rvm:master-fb4d9dd
+FROM leeonky/rvm
 
 USER $USER_NAME
 
