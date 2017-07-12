@@ -1,4 +1,4 @@
-set -x
+set -e
 
 function exec_cmd() {
 	echo '========================================='
@@ -37,8 +37,8 @@ function set_default_ruby_rails_ver() {
 	fi
 }
 
-for path in $(ls -d $1/*)
-do
+function process_project() {
+	local path=$1
 	pushd "$path"
 		exec_cmd rvm install $(cat .ruby-version)
 	popd
@@ -57,4 +57,11 @@ do
 		exec_cmd bundle install
 		set_default_ruby_rails_ver
 	popd
-done
+}
+
+process_project "$1"
+
+#for path in $(ls -d $1/*)
+#do
+	#process_project "$path"
+#done

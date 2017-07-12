@@ -29,6 +29,9 @@ RUN sudo yum install -y \
 ADD projects /tmp/projects
 ADD setup_project.sh /tmp/setup_project.sh
 
-RUN /bin/bash --login /tmp/setup_project.sh /tmp/projects
+RUN /bin/bash --login /tmp/setup_project.sh /tmp/projects/default
+RUN /bin/bash --login /tmp/setup_project.sh /tmp/projects/gene
+RUN /bin/bash --login /tmp/setup_project.sh /tmp/projects/oulu
+RUN /bin/bash --login /tmp/setup_project.sh /tmp/projects/ule-web
 
 CMD bash
