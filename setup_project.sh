@@ -51,6 +51,7 @@ do
 		#else
 			#install_rails_by_gemfile
 		#fi
+		exec_cmd gem install bundle
 		exec_cmd bundle install
 		set_default_ruby_rails_ver
 	popd
